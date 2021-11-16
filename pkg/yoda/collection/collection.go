@@ -50,9 +50,9 @@ func CollectMaxValues(state *framework.CycleState, pod *v1.Pod, scvList scv.ScvL
 			}
 		}
 	}
-	state.Lock()
+	// state.Lock()
 	state.Write("Max", &data)
-	state.Unlock()
+	// state.Unlock()
 	return framework.NewStatus(framework.Success, "")
 }
 

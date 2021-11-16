@@ -2,6 +2,7 @@ package score
 
 import (
 	"errors"
+
 	scv "github.com/NJUPT-ISL/SCV/api/v1"
 	"github.com/NJUPT-ISL/Yoda-Scheduler/pkg/yoda/collection"
 	"github.com/NJUPT-ISL/Yoda-Scheduler/pkg/yoda/filter"
@@ -25,9 +26,9 @@ const (
 )
 
 func CalculateScore(s *scv.Scv, state *framework.CycleState, pod *v1.Pod, info *framework.NodeInfo) (uint64, error) {
-	state.RLock()
+	// state.RLock()
 	d, err := state.Read("Max")
-	state.RUnlock()
+	// state.RUnlock()
 	if err != nil {
 		return 0, errors.New("Error Get CycleState Info Max Error: " + err.Error())
 	}
